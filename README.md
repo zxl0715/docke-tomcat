@@ -12,7 +12,7 @@
 5、支持Java实现AES256位对称加密算法
 
 
-#运行示例：
+# 运行示例：
 docker run -d -p 30052:8080 -v /web:/usr/local/tomcat/webapps --name irms  swr.cn-east-2.myhuaweicloud.com/hwy_zhys/tomcat
 访问：localhost:30052
 
@@ -23,12 +23,12 @@ apache-tomcat-8.5.43.tar.gz
 jdk-8u221-linux-x64.tar.gz
 
 2、执行Dockerfile 编译成 镜像
-docker build -t swr.cn-east-2.myhuaweicloud.com/hwy_zhys/tomcat .
+`docker build -t swr.cn-east-2.myhuaweicloud.com/hwy_zhys/tomcat .`
 
 
 #项目使用Demo Dockefile文件如下
 
-#基础镜像
+```#基础镜像
 FROM swr.cn-east-2.myhuaweicloud.com/hwy_zhys/tomcat
 #作者
 MAINTAINER cch
@@ -44,4 +44,4 @@ RUN chown root:root -R /root \
 
 #启动时运行tomcat
 
-CMD  /usr/local/tomcat/webapps/getEnvParams.sh && /usr/local/tomcat/bin/catalina.sh run
+CMD  /usr/local/tomcat/webapps/getEnvParams.sh && /usr/local/tomcat/bin/catalina.sh run```
