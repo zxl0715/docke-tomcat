@@ -45,4 +45,5 @@ RUN chown root:root -R /root \
 
 #启动时运行tomcat
 
-CMD  /usr/local/tomcat/webapps/getEnvParams.sh && /usr/local/tomcat/bin/catalina.sh run```
+CMD  /usr/local/tomcat/webapps/getEnvParams.sh && /usr/local/tomcat/bin/catalina.sh run 
+```
