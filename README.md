@@ -24,3 +24,24 @@ jdk-8u221-linux-x64.tar.gz
 
 2、执行Dockerfile 编译成 镜像
 docker build -t swr.cn-east-2.myhuaweicloud.com/hwy_zhys/tomcat .
+
+
+#项目使用Demo Dockefile文件如下
+
+#基础镜像
+FROM swr.cn-east-2.myhuaweicloud.com/hwy_zhys/tomcat
+#作者
+MAINTAINER cch
+#这个环境变量用来表名该镜像模板的最后更新时间
+ENV REFRESHED_AT 2019-08-14
+#将宿主机的当前目录下的文件拷至镜像的/usr/local/tomcat/webapps目录下
+ADD target/*.war  /usr/local/tomcat/webapps
+#将getEnvParams拷贝到容器/usr/local/tomcat/webapps/目录下
+ADD ./getEnvParams.sh /usr/local/tomcat/webapps
+#设置修改配置文件的可执行权限
+RUN chown root:root -R /root \ 
+  && chmod +x /usr/local/tomcat/webapps/getEnvParams.sh 
+
+#启动时运行tomcat
+
+CMD  /usr/local/tomcat/webapps/getEnvParams.sh && /usr/local/tomcat/bin/catalina.sh run
