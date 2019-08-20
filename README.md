@@ -29,7 +29,8 @@ jdk-8u221-linux-x64.tar.gz
 
 ## 项目使用Demo Dockefile文件如下
 
-```#基础镜像
+```
+#基础镜像
 FROM swr.cn-east-2.myhuaweicloud.com/hwy_zhys/tomcat
 #作者
 MAINTAINER cch
