@@ -1,5 +1,5 @@
 ﻿# docke-tomcat
-制作公司默认的 tomcat+jdk1.8的运行环。
+制作公司默认的 tomcat+jdk1.8的运行环镜。
 
 1、JDK版本为：jdk1.8.0_221
 

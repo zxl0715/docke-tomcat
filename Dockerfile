@@ -1,6 +1,7 @@
 #docker build -t swr.cn-east-2.myhuaweicloud.com/hwy_zhys/tomcat .
 #指定操作的镜像
 FROM centos
+LABEL Description="公司默认的 tomcat+jdk1.8的运行环镜;1、JDK版本为：jdk1.8.0_221;2、tomgcat版本为：apache-tomcat-8.5.43;3、tomcat路径为：/usr/local/tomcat/webapps;4、容器端口为：8080;5、支持Java实现AES256位对称加密算法" Vendor="ZH" Version="1.0"
 # 维护者信息
 MAINTAINER zhangxiaolin
 #设置时区  
